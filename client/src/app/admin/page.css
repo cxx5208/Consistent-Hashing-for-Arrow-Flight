@@ -1,0 +1,74 @@
+/* page.css */
+.page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .circle-container {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    margin: 0 auto;
+  }
+  
+  .circle-chip {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
+  
+  .add-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .circle-svg {
+    margin: auto;
+    display: flex;
+    overflow: visible;
+    stroke-width: 0; /* Adjust the value to make it thinner or thicker */
+    /* This will allow text to overflow outside of the SVG container */
+}
+  
+  .circle-node {
+    fill: black;
+    font-size: 14px; /* Increased font size for better readability */
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.3s ease, fill 0.3s ease;
+  }
+  
+  .circle-node:hover {
+    transform: scale(1.2);
+    fill: #555; /* Darker shade on hover for better contrast */
+  }
+  
+  /* Styling for the main circle */
+  circle.main-circle {
+    stroke: #666; /* Darker stroke for the circle */
+    stroke-width: 4; /* Thicker stroke for visibility */
+    stroke-dasharray: 10, 5; /* Dashed line style */
+    fill: transparent;
+    transition: stroke-width 0.3s ease;
+  }
+  
+  circle.main-circle:hover {
+    stroke-width: 6; /* Thicker stroke on hover */
+    stroke: #333; /* Even darker stroke on hover */
+  }
+  
+
+  .circle-node-label {
+    font-size: 12px; /* Adjust as needed */
+    fill: black; /* Text color */
+    /* Any additional styling for the text labels */
+    user-select: none; /* Prevent text selection */
+  }
+  
+
+  
