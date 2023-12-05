@@ -25,6 +25,35 @@ class ConsistentHashRing:
             del self.ring[key]
             self.sorted_keys.remove(key)
         return next_node
+    
+    def get_next_node(self, node):
+        if len(self.sorted_keys) == 0:
+            return None
+
+        node_key = self._hash_key(f'{node}:0')
+        for sorted_key in self.sorted_keys:
+            if sorted_key > node_key:
+                return self.ring[sorted_key]
+        return self.ring[self.sorted_keys[0]]
+
+    def get_node(self, key):
+        if not self.ring:
+            return None
+
+        hash_key = self._hash_key(key)
+        for sorted_key in self.sorted_keys:
+            if hash_key <= sorted_key:
+                return self.ring[sorted_key]
+        return self.ring[self.sorted_keys[0]]
+
+    def files_to_move(self, files, node):
+        files_to_move = []
+        new_node_key = self._hash_key(f'{node}:0')
+        for file in files:
+            file_key = self._hash_key(file)
+            if file_key <= new_node_key:
+                files_to_move.append(file)
+        return files_to_move
 
     @staticmethod
     def _hash_key(key):
