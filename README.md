@@ -59,7 +59,8 @@ The architecture of the Consistent Hashing for Arrow Flight project includes cli
 
 ### Flow Diagram
 
-![Consistent Hashing for Arrow Flight Flow Diagram](flow-diagram.png)
+![image](https://github.com/cxx5208/Consistent-Hashing-for-Arrow-Flight/assets/76988460/eb0f48ce-7a25-42a2-b231-0994e401b5cd)
+
 
 The flow diagram illustrates the process from a client request to data retrieval or storage in the server cluster, facilitated by the consistent hashing mechanism.
 
